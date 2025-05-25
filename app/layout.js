@@ -3,7 +3,6 @@ import Navigation from "./_components/Navigation";
 import "@/app/_styles/globals.css";
 
 export const metadata = {
-  // title: "About",
   title: {
     template: "%s - The Wild Oasis",
     default: "Welcome - The Wild Oasis",
