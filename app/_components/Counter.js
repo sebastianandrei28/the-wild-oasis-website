@@ -1,14 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getCabins } from "../apiCabins";
 
 export default function Counter({ users }) {
   const [count, setCounter] = useState(0);
-  useEffect(function () {
-    getCabins().then((data) => console.log(data));
-  }, []);
-  console.log(users);
+  
   return (
     <>
       <button onClick={() => setCounter((c) => c + 1)}>{count}</button>;
