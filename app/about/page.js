@@ -39,7 +39,9 @@ export default function Page() {
       <div className="col-span-2">
         <Image
           src={about1}
+          placeholder="blur"
           alt="Family sitting around a fire pit in front of cabin"
+          quality={80}
         />
       </div>
 
@@ -47,6 +49,8 @@ export default function Page() {
         <Image
           className="object-cover "
           fill
+          placeholder="blur"
+          quality={80}
           src={about2}
           alt="Family that manages The Wild Oasis"
         />
