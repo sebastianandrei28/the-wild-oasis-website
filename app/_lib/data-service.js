@@ -4,20 +4,21 @@ import { supabase } from "./supabase";
 // GET
 
 export async function getCabin(id) {
-  const { data, error } = await supabase
-    .from("cabins")
-    .select("*")
-    .eq("id", id)
-    .single();
+  try {
+    const { data, error } = await supabase
+      .from("cabins")
+      .select("*")
+      .order("id");
 
-  // For testing
-  // await new Promise((res) => setTimeout(res, 1000));
-
-  if (error) {
+    if (error) {
+      console.error(error);
+      return null;
+    }
+    return id ? data.filter((cabin) => cabin.id === parseInt(id)) : data;
+  } catch (error) {
     console.error(error);
+    return null;
   }
-
-  return data;
 }
 
 export async function getCabinPrice(id) {
