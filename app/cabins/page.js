@@ -5,7 +5,6 @@ import { getCabin } from "../_lib/data-service";
 export const metadata = {
   title: "Cabins",
 };
-console.log();
 export default async function Page() {
   // CHANGE
   const cabins = await getCabin();
