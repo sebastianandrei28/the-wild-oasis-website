@@ -7,7 +7,9 @@ export async function getCabin(id) {
   try {
     const { data, error } = await supabase
       .from("cabins")
-      .select("id, name, maxCapacity, regularPrice, discount, image")
+      .select(
+        "id, name, maxCapacity, regularPrice, discount, image, description"
+      )
       .order("name");
 
     if (error) {
