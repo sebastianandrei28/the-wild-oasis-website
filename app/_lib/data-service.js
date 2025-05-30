@@ -1,7 +1,6 @@
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
-/////////////
-// GET
+import { notFound } from "next/navigation";
 
 export async function getCabin(id) {
   try {
@@ -14,7 +13,7 @@ export async function getCabin(id) {
 
     if (error) {
       console.error(error);
-      return null;
+      notFound();
     }
     return id ? data.filter((cabin) => cabin.id === parseInt(id)) : data;
   } catch (error) {
